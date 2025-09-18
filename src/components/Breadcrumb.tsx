@@ -15,19 +15,20 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
 
   return (
     <nav className="mb-6">
-      <ol className="flex items-center space-x-2 text-sm text-gray-600">
+      <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
         {items.map((item, index) => (
-          <li key={index} className="flex items-center">
-            {index > 0 && <span className="mx-2">›</span>}
+          <li key={index} className="flex items-center" style={{ flexShrink: 0 }}>
+            {index > 0 && <span className="mx-2" style={{ flexShrink: 0 }}>›</span>}
             {item.path ? (
               <button
                 onClick={() => navigate(item.path!)}
-                className="px-3 py-1.5 rounded-md bg-gray-50 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 hover:border-blue-300 transition-all duration-200 font-medium cursor-pointer shadow-sm hover:shadow-md"
+                className="px-2 py-1 rounded-md bg-gray-50 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 hover:border-blue-300 transition-all duration-200 font-medium cursor-pointer shadow-sm hover:shadow-md text-xs sm:text-sm sm:px-3 sm:py-1.5"
+                style={{ flexShrink: 0 }}
               >
                 {item.label}
               </button>
             ) : (
-              <span className="px-3 py-1.5 rounded-md bg-blue-100 text-blue-800 font-medium border border-blue-200">{item.label}</span>
+              <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium border border-blue-200 text-xs sm:text-sm sm:px-3 sm:py-1.5" style={{ flexShrink: 0 }}>{item.label}</span>
             )}
           </li>
         ))}
