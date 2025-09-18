@@ -51,13 +51,14 @@ const CategoryPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 flex flex-col items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
-        <Breadcrumb items={breadcrumbItems} />
+    <div className="h-screen bg-white py-8 px-4">
+      <div className="max-w-md mx-auto">
+        <div className="p-8">
+          <Breadcrumb items={breadcrumbItems} />
 
-        <h1 className="text-xl font-bold text-center mb-6 text-gray-800">
-          你和新{side === '男方' ? '郎' : '娘'}是什麼時期認識的/什麼關係
-        </h1>
+          <h1 className="text-xl font-bold text-center mb-6 text-gray-800">
+            你和新{side === '男方' ? '郎' : '娘'}是什麼時期認識的/什麼關係
+          </h1>
 
         <div className="space-y-3 mb-6">
           {categories.map(category => {
@@ -75,12 +76,13 @@ const CategoryPage: React.FC = () => {
           })}
         </div>
 
-        <button
-          onClick={handleBack}
-          className="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
-        >
-          返回上一頁
-        </button>
+          <button
+            onClick={handleBack}
+            className="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
+          >
+            返回上一頁
+          </button>
+        </div>
       </div>
     </div>
   );

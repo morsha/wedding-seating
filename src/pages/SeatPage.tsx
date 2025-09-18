@@ -52,9 +52,9 @@ const SeatPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 py-8 px-4">
+    <div className="h-screen bg-white py-8 px-4">
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="p-8">
           <Breadcrumb items={breadcrumbItems} />
 
           {/* 賓客資訊 */}

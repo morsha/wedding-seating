@@ -38,7 +38,7 @@ const FullMapPage: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 py-6 px-4">
+    <div className="h-screen bg-white py-6 px-4">
       <div className="max-w-7xl mx-auto">
         {/* 標題列 */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 space-y-4 sm:space-y-0">
