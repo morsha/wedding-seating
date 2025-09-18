@@ -72,10 +72,14 @@ const SeatPage: React.FC = () => {
                 <div className="text-xs">桌號</div>
               </div>
             </div>
+
+            <p className="text-sm text-gray-600 mt-2">
+              每桌備有座位名牌，請至該桌尋找您的姓名卡片
+            </p>
           </div>
 
           {/* 座位地圖 */}
-          <PersonalSeatMap guest={guest} className="mb-6" />
+          <PersonalSeatMap guest={guest} guests={guests} className="mb-6" />
 
           {/* 操作按鈕 */}
           <div className="flex space-x-4">

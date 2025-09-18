@@ -20,17 +20,17 @@ export interface VenueElement {
 // 生成新的座位地圖配置
 export const generateTablePositions = (): TablePosition[] => {
   const tables: TablePosition[] = [];
-  const longTableWidth = 60; // 長桌寬度
-  const longTableHeight = 40; // 長桌高度
-  const mainTableWidth = 120; // 主桌寬度
-  const mainTableHeight = 60; // 主桌高度
+  const longTableWidth = 80; // 長桌寬度 (增大)
+  const longTableHeight = 50; // 長桌高度 (增大)
+  const mainTableWidth = 140; // 主桌寬度 (增大)
+  const mainTableHeight = 70; // 主桌高度 (增大)
 
   // 布局配置
-  const leftStartX = 120; // 左側桌子起始X (增加以避免與自助餐重疊)
-  const tableStartY = 120; // 桌子起始Y (舞台下方)
-  const rowGap = 50; // 行間距
-  const colGap = 80; // 統一列間距
-  const rightStartX = leftStartX + (longTableWidth + colGap) * 3; // 右側桌子起始X，保持一致間距
+  const leftStartX = 130; // 左側桌子起始X (增加以避免與自助餐重疊)
+  const tableStartY = 130; // 桌子起始Y (舞台下方)
+  const rowGap = 65; // 行間距 (增大)
+  const colGap = 100; // 統一列間距 (增大，增強走道視覺)
+  const rightStartX = leftStartX + (longTableWidth + colGap) * 3 + 40; // 右側桌子起始X，增加走道空間
 
   // 主桌 (2-1和3-1正前方)
   const mainTableX = leftStartX + (longTableWidth + colGap) + (longTableWidth / 2) - (mainTableWidth / 2); // 2-1和3-1之間的中心位置
@@ -50,7 +50,7 @@ export const generateTablePositions = (): TablePosition[] => {
 
     // 計算Y位置，在5和6之間加入走道空間
     let adjustedRow = row > 4 ? row - 1 : row;
-    if (row >= 6) adjustedRow += 1; // 6,7,8號桌向下移一個位置 (走道空間)
+    if (row >= 6) adjustedRow += 1.5; // 6,7,8號桌向下移更多空間 (加強走道視覺)
     const y = tableStartY + (adjustedRow - 1) * rowGap;
 
     // 1-x 桌
@@ -91,7 +91,7 @@ export const generateTablePositions = (): TablePosition[] => {
 
     // 計算Y位置，在5和6之間加入走道空間
     let adjustedRow = row > 4 ? row - 1 : row;
-    if (row >= 6) adjustedRow += 1; // 6,7,8號桌向下移一個位置 (走道空間)
+    if (row >= 6) adjustedRow += 1.5; // 6,7,8號桌向下移更多空間 (加強走道視覺)
     const y = tableStartY + (adjustedRow - 1) * rowGap;
 
     tables.push({
