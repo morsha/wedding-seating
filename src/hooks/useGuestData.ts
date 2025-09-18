@@ -19,7 +19,9 @@ export const useGuestData = (): UseGuestDataReturn => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('/wedding-seat.csv');
+      // 根據環境決定 CSV 檔案路徑
+      const csvPath = import.meta.env.PROD ? '/wedding-seating/wedding-seat.csv' : '/wedding-seat.csv';
+      const response = await fetch(csvPath);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
